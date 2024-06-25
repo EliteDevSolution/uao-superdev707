@@ -21,7 +21,7 @@ services:
       - mongodb
     environment:
       - NODE_ENV=development
-      - CONNECTION_STRING=mongodb://root:uaosuperdev707@mongodb:27017/
+      - DATABASE_URL=mongodb://root:uaosuperdev707@mongodb:27017
     command: npm run dev
 
   frontend:

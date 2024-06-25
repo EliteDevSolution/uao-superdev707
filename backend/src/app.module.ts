@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -8,7 +9,8 @@ import { EventController } from './event/event.controller';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017', {
+    ConfigModule.forRoot(),
+    MongooseModule.forRoot(process.env.DATABASE_URL, {
       dbName: 'calendar_event_db',
     }),
     MongooseModule.forFeature([{ name: 'Event', schema: EventSchema }]),
