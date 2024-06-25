@@ -20,9 +20,9 @@ services:
     depends_on:
       - mongodb
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
       - DATABASE_URL=mongodb://root:uaosuperdev707@mongodb:27017
-    command: npm run dev
+    command: node dist/main.js
 
   frontend:
     build: ./frontend
