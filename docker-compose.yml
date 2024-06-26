@@ -29,7 +29,7 @@ services:
     container_name: frontend
     ports:
       - "8080:8080"
-    command: npm run dev
+    command: npm run dev -- -p 8080
 
 volumes:
   mongo-data:
