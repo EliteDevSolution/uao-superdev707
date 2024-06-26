@@ -1,5 +1,5 @@
-import { CalendarEvent } from "@/components/CalenderEvent";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <CalendarEvent />;
+  return redirect("/webapp");
 }
